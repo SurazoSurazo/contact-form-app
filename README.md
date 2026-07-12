@@ -125,11 +125,9 @@ erDiagram
         timestamp updated_at
     }
 
-    categories ||--o{ contacts : "has many"
-    contacts }o--|| categories : "belongs to"
-    contacts ||--o{ contact_tag : "has many"
-    tags ||--o{ contact_tag : "has many"
-    contacts }o--o{ tags : "belongs to many"
+    categories ||--o{ contacts : "1:N"
+    contacts ||--o{ contact_tag : "1:N"
+    tags ||--o{ contact_tag : "1:N"
 ```
 
 `contact_tag` は `contact_id` と `tag_id` の組み合わせに複合ユニーク制約を設定しています。
